@@ -1,4 +1,5 @@
 import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
+import { containerTheme } from './components/Container';
 
 export const theme = extendTheme(
   {
@@ -8,6 +9,10 @@ export const theme = extendTheme(
       heading: 'Roboto, sans-serif',
       body: 'Roboto, sans-serif',
     },
+    styles: {},
+    components: {
+      Container: containerTheme,
+    },
   },
-  withDefaultColorScheme({ colorScheme: 'blue' })
+  withDefaultColorScheme({ colorScheme: 'blue' }),
 );
