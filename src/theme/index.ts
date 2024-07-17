@@ -6,13 +6,18 @@ export const theme = extendTheme(
     initialColorMode: 'light',
     useSystemColorMode: false,
     fonts: {
-      heading: 'Roboto, sans-serif',
-      body: 'Roboto, sans-serif',
+      heading: '\'Nunito\', sans-serif',
+      body: '\'Nunito\', sans-serif',
     },
-    styles: {},
+    styles: {
+      global: {
+        body: {
+        },
+      },
+    },
     components: {
       Container: containerTheme,
     },
   },
-  withDefaultColorScheme({ colorScheme: 'blue' }),
+  withDefaultColorScheme({ colorScheme: 'gray' }),
 );
