@@ -1,5 +1,13 @@
 .header {
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 2rem 0;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.color-mode-title {
+  font-weight: 300;
+  margin-left: 0.75rem;
+  text-transform: capitalize;
 }
