@@ -17,6 +17,7 @@ export const Header: FC = () => {
           </Box>
           <Box onClick={toggleColorMode}>
             <IconButton
+              aria-label={'Color Mode Switcher'}
               icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               fontSize='sm'
             />
