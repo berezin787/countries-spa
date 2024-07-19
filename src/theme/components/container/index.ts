@@ -1,6 +1,6 @@
 import { defineStyleConfig } from '@chakra-ui/react';
 
-export const containerTheme = defineStyleConfig({
+export const Container = defineStyleConfig({
   baseStyle: {
     'margin': '0 auto',
     'padding': '0 2rem',
