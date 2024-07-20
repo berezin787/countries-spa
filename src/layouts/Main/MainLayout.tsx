@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Header } from '../../components/Header/Header.tsx';
-import { Container } from '../../components/Container/Container.tsx';
+import { Header, Container } from '../../components';
 
 export const MainLayout: FC = () => {
   return (
