@@ -1,19 +1,42 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import classNames from 'classnames';
 import { Box } from '@chakra-ui/react';
+import { Search, Select } from '../';
 import styles from './Controls.module.css';
-import { Search } from '../';
+import { Region, RegionOptionsType } from '../../types/region.types.ts';
+
+const optionsMap: RegionOptionsType = {
+  'Africa': { value: 'Africa', label: 'Africa' },
+  'America': { value: 'America', label: 'America' },
+  'Asia': { value: 'Asia', label: 'Asia' },
+  'Europe': { value: 'Europe', label: 'Europe' },
+  'Oceania': { value: 'Oceania', label: 'Oceania' },
+};
+
+const selectOptions = Object.values(optionsMap);
 
 export const Controls: FC = () => {
+  const [region, setRegion] = useState<Region>(null);
+
+  const handleChangeRegion = (option: { label: string, value: string } | null) => {
+    setRegion(option?.value as Region || null);
+  };
+
   return (
     <Box
       className={classNames(styles.controls)}
       flexDir={{ md: 'row' }}
       alignItems={{ md: 'center' }}
       justifyContent={{ md: 'space-between' }}
+      lineHeight={10}
     >
       <Search />
-      {/*<Select />*/}
+      <Select
+        options={selectOptions}
+        onChange={handleChangeRegion}
+        placeholder='Filter by Region'
+        value={optionsMap[region] || null}
+      />
     </Box>
   );
 };
