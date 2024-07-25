@@ -27,7 +27,6 @@ export const Search: FC = () => {
       htmlFor={searchInputId}
       className={classNames(styles.search)}
       boxShadow={colorMode}
-      lineHeight={10}
       marginBottom={{ md: '0' }}
       w={{ md: 'xs' }}
     >
