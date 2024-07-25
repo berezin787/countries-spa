@@ -23,7 +23,7 @@ export const Select: FC<ISelectProps> = ({
       <ReactSelect
         onChange={onChange}
         styles={{
-          option: selectStyles.option,
+          option: (provided, state) => selectStyles.option!(provided, state, colorMode),
           clearIndicator: selectStyles.clearIndicator,
           indicatorSeparator: selectStyles.indicatorSeparator,
           menu: (provided, state) => selectStyles.menu!(provided, state, colorMode),

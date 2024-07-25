@@ -2,9 +2,13 @@ import { ColorMode } from '@chakra-ui/react';
 import { StylesConfig } from 'react-select';
 
 export const reactSelectStyles = {
-  option: (provided) => ({
+  option: (provided, state, colorMode: ColorMode) => ({
     ...provided,
     cursor: 'pointer',
+    backgroundColor: state.isSelected
+      ? ((colorMode === 'light') ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.06)')
+      : 'inherit',
+    padding: '0.5rem 1.5rem',
   }),
   clearIndicator: (provided) => ({
     ...provided,
@@ -23,7 +27,5 @@ export const reactSelectStyles = {
     boxShadow: `var(--chakra-shadows-${colorMode})`,
     left: '-1.5rem',
     marginTop: '1rem',
-    padding: '0.5rem 1.5rem',
-    width: 'calc(3rem + 100%)',
   }),
 } as StylesConfig;
