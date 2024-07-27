@@ -1,9 +1,9 @@
 import { FC, useState } from 'react';
 import classNames from 'classnames';
-import { Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { Search, Select } from '../';
 import styles from './Controls.module.css';
-import { Region, RegionOptionsType } from '../../types/region.types.ts';
+import { Region, RegionOptionsType } from '../../types/region.types';
 
 const optionsMap: RegionOptionsType = {
   'Africa': { value: 'Africa', label: 'Africa' },
@@ -23,7 +23,7 @@ export const Controls: FC = () => {
   };
 
   return (
-    <Box
+    <Flex
       className={classNames(styles.controls)}
       flexDir={{ md: 'row' }}
       alignItems={{ md: 'center' }}
@@ -37,6 +37,6 @@ export const Controls: FC = () => {
         placeholder='Filter by Region'
         value={optionsMap[region] || null}
       />
-    </Box>
+    </Flex>
   );
 };
