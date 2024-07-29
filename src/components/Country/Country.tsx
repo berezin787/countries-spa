@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import classNames from 'classnames';
 import { Card, CardBody, CardHeader, Heading, HStack, Image, List, ListItem, Text } from '@chakra-ui/react';
-import { ICountryProps } from './country.props.interface';
+import { ICountryProps } from './Country.props.interface';
 import styles from './Country.module.css';
 
 export const Country: FC<ICountryProps> = ({

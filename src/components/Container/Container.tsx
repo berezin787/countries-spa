@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { Container as ChakraContainer } from '@chakra-ui/react';
-import { ContainerProps } from './Container.props.ts';
+import { IContainerProps } from './Container.props.interface';
 
-export const Container: FC<ContainerProps> = ({ children }) => {
+export const Container: FC<IContainerProps> = ({ children }) => {
   return (
     <ChakraContainer>
       {children}

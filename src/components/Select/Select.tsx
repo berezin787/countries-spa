@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Box, useColorMode } from '@chakra-ui/react';
 import { default as ReactSelect } from 'react-select';
 import classNames from 'classnames';
-import { ISelectProps } from './Select.props.tsx';
+import { ISelectProps } from './Select.props.interface';
 import { reactSelectStyles as selectStyles } from './react-select.styles';
 import styles from './Select.module.css';
 
