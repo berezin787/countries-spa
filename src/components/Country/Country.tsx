@@ -28,7 +28,7 @@ export const Country: FC<ICountryProps> = ({
               <ListItem key={`${country.name}-${title}`}>
                 <HStack>
                   <Text fontWeight='extrabold' textTransform='capitalize'>{title}:</Text>
-                  <Text>{country[title]}</Text>
+                  <Text>{country[title] || ''}</Text>
                 </HStack>
               </ListItem>
             )) }

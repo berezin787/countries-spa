@@ -4,4 +4,7 @@ export interface ICountry {
     svg: string,
     png: string,
   };
+  population: string;
+  region: string;
+  capital: string;
 }
