@@ -1,2 +1,2 @@
-export { Link } from './link/index.tsx';
-export { Container } from './container/index.ts';
+export { Link } from './link';
+export { Container } from './container';

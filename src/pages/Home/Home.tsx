@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { Controls } from '../../components';
+import { Controls, Countries } from '../../components';
 
 export const Home: FC = () => {
   return (
     <>
       <Controls />
-      {/*<List />*/}
+      <Countries />
     </>
   );
 };
