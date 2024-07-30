@@ -23,6 +23,7 @@ export const reactSelectStyles = {
   }),
   menu: (provided, state, colorMode: ColorMode) => ({
     ...provided,
+    background: 'var(--chakra-colors-chakra-body-bg)',
     borderRadius: '0.5rem',
     boxShadow: `var(--chakra-shadows-${colorMode})`,
     left: '-1.5rem',
