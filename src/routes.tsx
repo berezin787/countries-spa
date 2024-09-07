@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { MainLayout } from './layouts/Main/MainLayout.tsx';
-import { Home } from './pages';
+import { MainLayout } from './layouts/Main/MainLayout';
+import { Details, Home } from './pages';
 
 export const routes = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/country/:name',
-        element: <>Details</>,
+        element: <Details />,
       },
       {
         path: '*',
