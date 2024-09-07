@@ -1,0 +1,39 @@
+.country-info {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.country-info-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.country-info-body {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.country-info-about {
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.country-info-borders {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.country-border-group {
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.border-tag {
+  padding: 0 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
