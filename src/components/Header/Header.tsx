@@ -2,9 +2,9 @@ import { FC } from 'react';
 import classNames from 'classnames';
 import { Box, Flex, IconButton, useColorMode } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Container } from '../Container/Container';
+import { Link } from '../Link/Link';
 import styles from './Header.module.css';
-import { Container } from '../Container/Container.tsx';
-import { Link } from '../Link/Link.tsx';
 
 export const Header: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
