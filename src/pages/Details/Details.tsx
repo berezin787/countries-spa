@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Flex, useColorMode } from '@chakra-ui/react';
+import { Button, Flex, Text, useColorMode } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { CountryInfo } from '../../components/CountryInfo/CountryInfo';
 import { useCountry, useNeighbours } from '../../hooks';
 
 export const Details: FC = () => {
-  const { country } = useCountry();
+  const { country, isError, error } = useCountry();
   const { neighbours } = useNeighbours(country?.borders);
   const { colorMode } = useColorMode();
   const navigate = useNavigate();
@@ -30,6 +30,7 @@ export const Details: FC = () => {
           neighbours={neighbours}
         />
       }
+      { isError && error && <Text alignSelf='center'>{error.message}</Text> }
     </Flex>
   );
 };

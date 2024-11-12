@@ -10,9 +10,14 @@ async function getCountry(name: string): Promise<ICountryData> {
   return data[0];
 }
 
-export function useCountry(): { country: ICountryData } {
+export function useCountry()
+: {
+  country: ICountryData | undefined,
+  isError: boolean,
+  error: Error | null,
+} {
   const { name } = useParams();
-  const { data } = useQuery({
+  const { data, isError, error } = useQuery({
     enabled: !!name,
     queryKey: generateCountryKey(name!),
     queryFn: () => getCountry(name!),
@@ -20,5 +25,7 @@ export function useCountry(): { country: ICountryData } {
 
   return {
     country: data,
+    isError,
+    error,
   };
 }
