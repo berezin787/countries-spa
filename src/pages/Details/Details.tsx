@@ -6,7 +6,7 @@ import { CountryInfo } from '../../components/CountryInfo/CountryInfo';
 import { useCountry, useNeighbours } from '../../hooks';
 
 export const Details: FC = () => {
-  const { country, isError, error } = useCountry();
+  const { country, isLoading } = useCountry();
   const { neighbours } = useNeighbours(country?.borders);
   const { colorMode } = useColorMode();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export const Details: FC = () => {
           neighbours={neighbours}
         />
       }
-      { isError && error && <Text alignSelf='center'>{error.message}</Text> }
+      { !isLoading && <Text alignSelf='center'>Country not found :(</Text> }
     </Flex>
   );
 };
