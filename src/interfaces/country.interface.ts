@@ -1,5 +1,9 @@
 export interface ICountry {
-  name: string;
+  name: {
+    common: string,
+    official: string,
+    nativeName: Record<string, { official: string, common: string }>,
+  };
   flags: {
     svg: string,
     png: string,

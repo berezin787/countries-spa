@@ -1,10 +1,9 @@
 import { ICountry } from './country.interface';
 
 export interface ICountryData extends ICountry {
-  nativeName: string;
   borders: string[];
-  currencies: { code: string; name: string }[];
-  languages: { name: string }[];
+  currencies: Record<string, { symbol: string; name: string }>;
+  languages: Record<string, string>;
   subregion: string;
-  topLevelDomain: string[];
+  tld: string[];
 }
