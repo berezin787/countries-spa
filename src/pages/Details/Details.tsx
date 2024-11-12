@@ -1,15 +1,14 @@
-import { FC, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Flex, useColorMode } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
-import { ICountryData } from '../../interfaces/country-data.interface';
 import { CountryInfo } from '../../components/CountryInfo/CountryInfo';
+import { useCountry } from '../../hooks/useCountry';
 
 export const Details: FC = () => {
-  // const { name } = useParams();
+  const { country } = useCountry();
   const { colorMode } = useColorMode();
   const navigate = useNavigate();
-  const [country] = useState<ICountryData>(null);
 
   return (
     <Flex
