@@ -11,7 +11,7 @@ async function getCountries(): Promise<ICountry[]> {
   return data;
 }
 
-export const selectVisibleCountries = (countries: ICountry[], region: Region | null, search: string = '') => {
+const selectVisibleCountries = (countries: ICountry[], region: Region | null, search: string = '') => {
   return countries.filter((country) => {
     return region !== null
       ? country.region.includes(region) && country.name.common.toLowerCase().includes(search.toLowerCase())
