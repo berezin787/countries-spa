@@ -1,5 +1,5 @@
 import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
-import { Container, Link } from './components';
+import { Container, Link, Spinner } from './components';
 
 export const theme = extendTheme(
   {
@@ -22,6 +22,7 @@ export const theme = extendTheme(
     components: {
       Container,
       Link,
+      Spinner,
     },
   },
   withDefaultColorScheme({ colorScheme: 'gray' }),

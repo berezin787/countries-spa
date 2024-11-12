@@ -6,3 +6,4 @@ export * from './Search/Search';
 export * from './Select/Select';
 export * from './Countries/Countries';
 export * from './Country/Country';
+export * from './Loading/Loading';
