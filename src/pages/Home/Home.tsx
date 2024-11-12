@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Controls, Countries } from '../../components';
-import { useCountries } from '../../hooks/useCountries';
+import { useCountries } from '../../hooks';
 
 export const Home: FC = () => {
   const { countries, region, search, setSearch, handleChangeSearch, handleChangeRegion } = useCountries();
