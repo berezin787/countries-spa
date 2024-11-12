@@ -10,7 +10,7 @@ async function getCountry(name: string): Promise<ICountryData> {
   return data[0];
 }
 
-export function useCountry() {
+export function useCountry(): { country: ICountryData } {
   const { name } = useParams();
   const { data } = useQuery({
     enabled: !!name,
