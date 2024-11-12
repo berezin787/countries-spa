@@ -7,3 +7,4 @@ export * from './Select/Select';
 export * from './Countries/Countries';
 export * from './Country/Country';
 export * from './Loading/Loading';
+export * from './Toast/Toast';
