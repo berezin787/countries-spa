@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Flex, useColorMode } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { CountryInfo } from '../../components/CountryInfo/CountryInfo';
-import { useCountry } from '../../hooks/useCountry';
+import { useCountry, useNeighbours } from '../../hooks';
 
 export const Details: FC = () => {
   const { country } = useCountry();
+  const { neighbours } = useNeighbours(country?.borders);
   const { colorMode } = useColorMode();
   const navigate = useNavigate();
 
@@ -26,6 +27,7 @@ export const Details: FC = () => {
           colorMode={colorMode}
           country={country}
           navigate={navigate}
+          neighbours={neighbours}
         />
       }
     </Flex>

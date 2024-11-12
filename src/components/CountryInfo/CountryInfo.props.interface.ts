@@ -7,4 +7,5 @@ export interface ICountryInfoProps extends HTMLAttributes<HTMLDivElement> {
   country: ICountryData;
   colorMode: ColorMode;
   navigate: NavigateFunction;
+  neighbours: string[];
 }

@@ -8,6 +8,7 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
   country,
   navigate,
   colorMode,
+  neighbours,
 }) => {
   const aboutItems: Record<string, string> = {
     'Native Name': country.name.nativeName[Object.keys(country.name.nativeName)[0]].common,
@@ -36,7 +37,7 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
         className={classNames(styles['country-info-body'])}
         justifyContent={{ md: 'flex-start' }}
       >
-        <Heading size='lg' fontWeight='medium'>{country.name.official}</Heading>
+        <Heading size='lg' fontWeight='medium'>{country.name.common}</Heading>
         <Flex
           className={classNames(styles['country-info-about'])}
           flexDir={{ lg: 'row' }}
@@ -85,14 +86,14 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
             ? <Text>There is no border countries</Text>
             : (
               <Flex className={classNames(styles['country-border-group'])}>
-                { country.borders.map((borderTag) => (
+                { neighbours.map((neighbourName) => (
                   <Text
                     as='span'
                     boxShadow={colorMode}
                     className={classNames(styles['border-tag'])}
-                    key={borderTag}
-                    onClick={() => navigate(`/country/${borderTag}`)}
-                  >{borderTag}</Text>
+                    key={neighbourName}
+                    onClick={() => navigate(`/country/${neighbourName}`)}
+                  >{neighbourName}</Text>
                 )) }
               </Flex>
             )
