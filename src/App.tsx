@@ -1,17 +1,19 @@
 import { RouterProvider } from 'react-router-dom';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import { QueryClientProvider } from '@tanstack/react-query';
-import '@fontsource/nunito/400.css';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { queryClient } from './react-query';
 import { theme } from './theme';
-import { routes } from './routes.tsx';
+import { routes } from './routes';
+import '@fontsource/nunito/400.css';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <RouterProvider router={routes}></RouterProvider>
+        <RouterProvider router={routes} />
       </QueryClientProvider>
     </ChakraProvider>
   );
