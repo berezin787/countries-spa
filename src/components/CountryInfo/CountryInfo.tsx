@@ -10,7 +10,7 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
   colorMode,
 }) => {
   const aboutItems: Record<string, string> = {
-    'Native Name': country.nativeName,
+    'Native Name': country.name.nativeName[Object.keys(country.name.nativeName)[0]].common,
     'Population': country.population,
     'Region': country.region,
     'Sub Region': country.subregion,
@@ -36,7 +36,7 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
         className={classNames(styles['country-info-body'])}
         justifyContent={{ md: 'flex-start' }}
       >
-        <Heading size='lg' fontWeight='medium'>{country.name}</Heading>
+        <Heading size='lg' fontWeight='medium'>{country.name.official}</Heading>
         <Flex
           className={classNames(styles['country-info-about'])}
           flexDir={{ lg: 'row' }}
@@ -56,19 +56,22 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
             <ListItem>
               <HStack>
                 <Text fontWeight='extrabold'>Top Level Domain: </Text>
-                { country.topLevelDomain.map((tlD) => <Text key={tlD}>{tlD}</Text>) }
+                { country.tld.map((tlD) => <Text key={tlD}>{tlD}</Text>) }
               </HStack>
             </ListItem>
             <ListItem>
               <HStack>
                 <Text fontWeight='extrabold'>Currency: </Text>
-                { country.currencies.map((currency) => <Text key={currency.code}>{currency.name}</Text>) }
+                { Object.keys(country.currencies)
+                  .map((key) =>
+                    <Text key={country.currencies[key].symbol}>{country.currencies[key].name}</Text>
+                  )}
               </HStack>
             </ListItem>
             <ListItem>
               <HStack>
                 <Text fontWeight='extrabold'>Languages: </Text>
-                { country.languages.map((lang) => <Text key={lang.name}>{lang.name}</Text>) }
+                { Object.keys(country.languages).map((key) => <Text key={key}>{country.languages[key]}</Text>) }
               </HStack>
             </ListItem>
           </List>
