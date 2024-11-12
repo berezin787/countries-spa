@@ -23,10 +23,10 @@ export const Country: FC<ICountryProps> = ({
         />
       </CardHeader>
       <CardBody paddingBottom={8}>
-        <Heading size='sm'>{country.name}</Heading>
+        <Heading size='sm'>{country.name.common}</Heading>
         <List paddingTop={4} fontSize='sm'>
           { titles.map((title) => (
-              <ListItem key={`${country.name}-${title}`}>
+              <ListItem key={`${country.name.common}-${title}`}>
                 <HStack>
                   <Text fontWeight='extrabold' textTransform='capitalize'>{title}:</Text>
                   <Text>{country[title] || ''}</Text>

@@ -1,9 +1,10 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import classNames from 'classnames';
 import { Flex } from '@chakra-ui/react';
 import { Search, Select } from '../';
+import { RegionOptionsType } from '../../types/region.types';
+import { IControlsProps } from './Controls.props.interface';
 import styles from './Controls.module.css';
-import { Region, RegionOptionsType } from '../../types/region.types';
 
 const optionsMap: RegionOptionsType = {
   'Africa': { value: 'Africa', label: 'Africa' },
@@ -15,13 +16,13 @@ const optionsMap: RegionOptionsType = {
 
 const selectOptions = Object.values(optionsMap);
 
-export const Controls: FC = () => {
-  const [region, setRegion] = useState<Region>(null);
-
-  const handleChangeRegion = (option: { label: string, value: string } | null) => {
-    setRegion(option?.value as Region || null);
-  };
-
+export const Controls: FC<IControlsProps> = ({
+  region,
+  search,
+  setSearch,
+  handleChangeRegion,
+  handleChangeSearch,
+}) => {
   return (
     <Flex
       className={classNames(styles.controls)}
@@ -30,7 +31,7 @@ export const Controls: FC = () => {
       justifyContent={{ md: 'space-between' }}
       lineHeight={10}
     >
-      <Search />
+      <Search search={search} setSearch={setSearch} handleChangeSearch={handleChangeSearch} />
       <Select
         options={selectOptions}
         onChange={handleChangeRegion}

@@ -1,13 +1,13 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SimpleGrid, useColorMode } from '@chakra-ui/react';
 import classNames from 'classnames';
 import { ICountry } from '../../interfaces/country.interface';
+import { ICountriesProps } from './Countries.props.interface';
 import { Country } from '../';
 import styles from './Countries.module.css';
 
-export const Countries: FC = () => {
-  const [countries, setCountries] = useState<ICountry[]>(null);
+export const Countries: FC<ICountriesProps> = ({ countries }) => {
   const navigate = useNavigate();
   const { colorMode } = useColorMode();
 
@@ -19,10 +19,10 @@ export const Countries: FC = () => {
     >
       { countries && countries.map((country: ICountry) => (
         <Country
-          key={country.name}
+          key={country.name.common}
           country={country}
           colorMode={colorMode}
-          onClick={() => navigate(`/country/${country.name}`)}
+          onClick={() => navigate(`/country/${country.name.common}`)}
         />
       )) }
     </SimpleGrid>
