@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { FC } from 'react';
 import classNames from 'classnames';
 import {
   chakra,
@@ -11,16 +11,12 @@ import {
   useIds
 } from '@chakra-ui/react';
 import { CloseIcon, Search2Icon } from '@chakra-ui/icons';
+import { ISearchProps } from './Search.props.interface';
 import styles from './Search.module.css';
 
-export const Search: FC = () => {
+export const Search: FC<ISearchProps> = ({ search, setSearch, handleChangeSearch }) => {
   const { colorMode } = useColorMode();
   const [searchInputId] = useIds('input', 'search');
-  const [country, setCountry] = useState<string>('');
-
-  const handleChangeCountry = (event: ChangeEvent<HTMLInputElement>) => {
-    setCountry(event.target.value);
-  };
 
   return (
     <chakra.label
@@ -40,15 +36,15 @@ export const Search: FC = () => {
           variant='unstyled'
           placeholder='Search for a country'
           textIndent='1rem'
-          value={country}
-          onChange={handleChangeCountry}
+          value={search}
+          onChange={handleChangeSearch}
         />
-        { country?.length && (
+        { search?.length && (
           <InputRightElement>
             <IconButton
               aria-label='Clear country filter'
               icon={<CloseIcon />}
-              onClick={() => setCountry('')}
+              onClick={() => setSearch('')}
               fontSize='x-small'
               variant='unstyled'
             />
