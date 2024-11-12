@@ -10,7 +10,7 @@ async function getNeighbours(codes: string[]): Promise<ICountryData[]> {
   return data;
 }
 
-export function useNeighbours(borders: string[] = []): { neighbours: ICountryData[] } {
+export function useNeighbours(borders: string[] = []): { neighbours: string[] } {
   const select = useCallback((data: ICountryData[]) => data.map((item) => item.name.common), []);
   const { data = [] } = useQuery({
     queryKey: generateAlphaKey(borders),
