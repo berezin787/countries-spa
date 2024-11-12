@@ -31,7 +31,7 @@ export function useCountries() {
     []);
 
   const fallback: ICountry[] = [];
-  const { data = fallback } = useQuery({
+  const { data = fallback, isLoading } = useQuery({
     queryKey: [queryKeys.countries],
     queryFn: getCountries,
     select: (data: ICountry[]) => selectFn(data, region, search),
@@ -39,6 +39,7 @@ export function useCountries() {
 
   return {
     countries: data,
+    isLoading,
     region,
     search,
     setSearch,

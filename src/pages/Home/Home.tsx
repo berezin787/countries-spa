@@ -3,7 +3,15 @@ import { Controls, Countries } from '../../components';
 import { useCountries } from '../../hooks';
 
 export const Home: FC = () => {
-  const { countries, region, search, setSearch, handleChangeSearch, handleChangeRegion } = useCountries();
+  const {
+    countries,
+    isLoading,
+    region,
+    search,
+    setSearch,
+    handleChangeSearch,
+    handleChangeRegion,
+  } = useCountries();
   return (
     <>
       <Controls
@@ -13,7 +21,7 @@ export const Home: FC = () => {
         handleChangeSearch={handleChangeSearch}
         handleChangeRegion={handleChangeRegion}
       />
-      <Countries countries={countries} />
+      <Countries countries={countries} isLoading={isLoading} />
     </>
   );
 };
