@@ -30,7 +30,7 @@ export const Details: FC = () => {
           neighbours={neighbours}
         />
       }
-      { !isLoading && <Text alignSelf='center'>Country not found :(</Text> }
+      { !isLoading && !country && <Text alignSelf='center'>Country not found :(</Text> }
     </Flex>
   );
 };
