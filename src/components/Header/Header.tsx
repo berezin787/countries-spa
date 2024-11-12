@@ -13,7 +13,7 @@ export const Header: FC = () => {
       <Container>
         <Flex className={classNames(styles.header)}>
           <Box>
-            <Link to='/pew'>Where is the world?</Link>
+            <Link to='/'>Where is the world?</Link>
           </Box>
           <Box onClick={toggleColorMode}>
             <IconButton
