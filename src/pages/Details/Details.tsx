@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Flex, Text, useColorMode } from '@chakra-ui/react';
+import { Button, Flex, ScaleFade, Text, useColorMode } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { CountryInfo } from '../../components/CountryInfo/CountryInfo';
 import { useCountry, useNeighbours } from '../../hooks';
@@ -23,14 +23,20 @@ export const Details: FC = () => {
         leftIcon={<ArrowBackIcon />}
       >Back</Button>
       { country &&
-        <CountryInfo
-          colorMode={colorMode}
-          country={country}
-          navigate={navigate}
-          neighbours={neighbours}
-        />
+        <ScaleFade in={true} initialScale={0.4}>
+          <CountryInfo
+            colorMode={colorMode}
+            country={country!}
+            navigate={navigate}
+            neighbours={neighbours}
+          />
+        </ScaleFade>
       }
-      { !isLoading && !country && <Text alignSelf='center'>Country not found :(</Text> }
+      <Flex alignSelf='center' mt={10}>
+        <ScaleFade in={!isLoading && !country} unmountOnExit={true} initialScale={0.4}>
+          <Text fontSize='xl'>Country not found :(</Text>
+        </ScaleFade>
+      </Flex>
     </Flex>
   );
 };
