@@ -57,7 +57,7 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
             <ListItem>
               <HStack>
                 <Text fontWeight='extrabold'>Top Level Domain: </Text>
-                { country.tld.map((tlD) => <Text key={tlD}>{tlD}</Text>) }
+                { country.tld?.map((tlD) => <Text key={tlD}>{tlD}</Text>) }
               </HStack>
             </ListItem>
             <ListItem>

@@ -5,5 +5,5 @@ export interface ICountryData extends ICountry {
   currencies: Record<string, { symbol: string; name: string }>;
   languages: Record<string, string>;
   subregion: string;
-  tld: string[];
+  tld?: string[];
 }
