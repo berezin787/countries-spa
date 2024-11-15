@@ -5,8 +5,9 @@ Test task using Typescript, React.js, TanStack Query and Chakra UI Components li
 ## Task Description
 
 Integrating with the [REST Countries API](https://restcountries.com/) to pull country data and display it like in the designs.
+
 ![](desc.png)
-I found the idea for this challenge on the resource [frontendmentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). 
+I found the idea for this challenge on the resource [frontendmentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
 ## Installation
 
