@@ -4,14 +4,20 @@ import { axios } from '../axios';
 import { searchByCodes } from '../constants/urls';
 import { generateAlphaKey } from '../react-query/key-factories';
 import { ICountryData } from '../interfaces/country-data.interface';
+import { Neighbours } from '../types/neighbour.type';
 
 async function getNeighbours(codes: string[]): Promise<ICountryData[]> {
   const { data } = await axios.get(searchByCodes(codes));
   return data;
 }
 
-export function useNeighbours(borders: string[] = []): { neighbours: string[] } {
-  const select = useCallback((data: ICountryData[]) => data.map((item) => item.name.common), []);
+export function useNeighbours(borders: string[] = []): Neighbours {
+  const select = useCallback(
+    (data: ICountryData[]) =>
+      data.map((item) => ({
+        official: item.name.official,
+        common: item.name.common,
+      })),[]);
   const { data = [] } = useQuery({
     queryKey: generateAlphaKey(borders),
     queryFn: () => getNeighbours(borders),

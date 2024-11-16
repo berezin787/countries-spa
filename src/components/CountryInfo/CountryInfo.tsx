@@ -11,7 +11,7 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
   neighbours,
 }) => {
   const aboutItems: Record<string, string> = {
-    'Native Name': country.name.nativeName[Object.keys(country.name.nativeName)[0]].common,
+    'Native Name': country.name.nativeName[Object.keys(country.name.nativeName)[0]].official,
     'Population': country.population,
     'Region': country.region,
     'Sub Region': country.subregion,
@@ -83,17 +83,17 @@ export const CountryInfo: FC<ICountryInfoProps> = ({
         >
           <Text fontWeight='extrabold'>Border Countries</Text>
           { !country.borders?.length
-            ? <Text>There is no border countries</Text>
+            ? <Text>There are no border countries</Text>
             : (
               <Flex className={classNames(styles['country-border-group'])}>
-                { neighbours.map((neighbourName) => (
+                { neighbours.map((neighbour) => (
                   <Text
                     as='span'
                     boxShadow={colorMode}
                     className={classNames(styles['border-tag'])}
-                    key={neighbourName}
-                    onClick={() => navigate(`/country/${neighbourName}`)}
-                  >{neighbourName}</Text>
+                    key={neighbour.official}
+                    onClick={() => navigate(`/country/${neighbour.official}`)}
+                  >{neighbour.common}</Text>
                 )) }
               </Flex>
             )

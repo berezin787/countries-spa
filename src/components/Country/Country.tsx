@@ -26,7 +26,7 @@ export const Country: FC<ICountryProps> = ({
         <Heading size='sm'>{country.name.common}</Heading>
         <List paddingTop={4} fontSize='sm'>
           { titles.map((title) => (
-              <ListItem key={`${country.name.common}-${title}`}>
+              <ListItem key={`${country.name.official}-${title}`}>
                 <HStack>
                   <Text fontWeight='extrabold' textTransform='capitalize'>{title}:</Text>
                   <Text>{country[title] || ''}</Text>

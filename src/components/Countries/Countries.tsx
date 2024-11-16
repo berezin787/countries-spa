@@ -27,10 +27,10 @@ export const Countries: FC<ICountriesProps> = ({
         >
           { countries.map((country: ICountry) => (
             <Country
-              key={country.name.common}
+              key={country.name.official}
               country={country}
               colorMode={colorMode}
-              onClick={() => navigate(`/country/${country.name.common}`)}
+              onClick={() => navigate(`/country/${country.name.official}`)}
             />))}
         </SimpleGrid>
       </ScaleFade>
