@@ -13,7 +13,6 @@ export const Select: FC<ISelectProps> = ({
   value,
 }) => {
   const { colorMode } = useColorMode();
-
   return (
     <Box
       boxShadow={colorMode}
@@ -21,12 +20,12 @@ export const Select: FC<ISelectProps> = ({
       w={{ md: '3xs' }}
     >
       <ReactSelect
-        onChange={onChange}
+        onChange={(newValue) => onChange(newValue as { label: string; value: string })}
         styles={{
-          option: (provided, state) => selectStyles.option!(provided, state, colorMode),
+          option: (provided, state) => selectStyles.option(provided, state, colorMode),
           clearIndicator: selectStyles.clearIndicator,
           indicatorSeparator: selectStyles.indicatorSeparator,
-          menu: (provided, state) => selectStyles.menu!(provided, state, colorMode),
+          menu: (provided, state) => selectStyles.menu(provided, state, colorMode),
         }}
         isSearchable={false}
         isClearable={true}
