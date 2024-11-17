@@ -20,7 +20,7 @@ const selectVisibleCountries = (countries: ICountry[], region: Region | null, se
 };
 
 export function useCountries() {
-  const [region, setRegion] = useState<Region>(null);
+  const [region, setRegion] = useState<Region | null>(null);
   const [search, setSearch] = useState<string>('');
   const handleChangeRegion = (option: { label: string, value: string } | null) =>
     setRegion(option?.value as Region || null);

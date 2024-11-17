@@ -9,7 +9,7 @@ export const Country: FC<ICountryProps> = ({
   onClick,
   colorMode,
 }) => {
-  const titles: string[] = ['population', 'region', 'capital'];
+  const titles: ['population', 'region', 'capital'] = ['population', 'region', 'capital'];
   return (
     <Card
       cursor='pointer'

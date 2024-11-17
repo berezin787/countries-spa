@@ -36,7 +36,7 @@ export const Controls: FC<IControlsProps> = ({
         options={selectOptions}
         onChange={handleChangeRegion}
         placeholder='Filter by Region'
-        value={optionsMap[region] || null}
+        value={region === null ? null : optionsMap[region]}
       />
     </Flex>
   );

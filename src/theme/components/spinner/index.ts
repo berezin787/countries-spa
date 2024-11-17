@@ -12,6 +12,5 @@ export const Spinner = defineStyleConfig({
   },
   defaultProps: {
     size: 'xl',
-    speed: '0.65s',
   },
 });
