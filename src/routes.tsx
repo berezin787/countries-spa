@@ -1,8 +1,8 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import { MainLayout } from './layouts/Main/MainLayout';
 import { Details, Home, NotFound } from './pages';
 
-export const routes = createBrowserRouter([
+export const routes = createHashRouter([
   {
     path: '/',
     element: <MainLayout />,
@@ -21,4 +21,4 @@ export const routes = createBrowserRouter([
       },
     ],
   },
-], { basename: '/countries-spa' });
+]);
