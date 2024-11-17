@@ -21,4 +21,4 @@ export const routes = createBrowserRouter([
       },
     ],
   },
-]);
+], { basename: '/countries-spa' });
